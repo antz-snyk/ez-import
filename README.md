@@ -1,7 +1,7 @@
 # Snyk-EZ
 snyk-api-import the easy way (Github version)
 
-An opinionated way to quickly import repos from one Github org to one Snyk org; snyk-api-import utility is capable of a lot more, check out the main [url](https://github.com/snyk-tech-services/snyk-api-import) for more info*
+*An opinionated way to quickly import repos from one Github org to one Snyk org; snyk-api-import utility is capable of a lot more, check out the main [url](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
 ## Set up
