@@ -1,12 +1,11 @@
 # Snyk-EZ
-snyk-api-import the easy way (Github version)
 
-*An opinionated way to quickly import repos from one Github org to one Snyk org, using the snyk-api-import utility; this utility is capable of a lot more, check out the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
+*A kit to quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
 ## Set up
 
-*prereqs: jq, npm*
+*prereqs: jq, npm, a GitHub account connected to at least one GH organization with repos in it, a Snyk account with at least one Snyk org in it*
 
 1. Install [snyk-api-import](https://github.com/snyk-tech-services/snyk-api-import) tool
    - Easiest way: `npm install snyk-api-import@latest -g`
@@ -31,16 +30,16 @@ snyk-api-import the easy way (Github version)
    - Determine the correct integration option (GH or GH Enterprise), then select *Edit settings* for that integration option
    - Scroll to the bottom of the *Edit settings* page, copy the Integration ID
    - Create Var --> `export SNYK_ORG_INT_ID=<your Snyk org integration ID>`
+   - Write this Var to the snyk-orgs.jason file, and delete the alternate integration option; do one or the other of the below for this:
 
-     Write this Var to the snyk-orgs.json file, and delete the alternate integration option...
-       - If you are doing regular GitHub integration: 
+       - ...If you are doing regular GitHub integration: 
             ```
             cat <<< $(jq '.orgData[].integrations.github=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
             cat <<< $(jq 'del(.orgData[].integrations ["github-enterprise"])' snyk-orgs.json) > snyk-orgs.json 
             ```
-       - If you are doing GitHub Enterprise integration:
+       - ...If you are doing GitHub Enterprise integration:
             ```
             cat <<< $(jq 'del(.orgData[].integrations ["github"])' snyk-orgs.json) > snyk-orgs.json
             cat <<< $(jq '.orgData[].integrations.github-enterprise=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
-            ```  
-     
+            ```
+7. 
