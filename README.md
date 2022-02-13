@@ -1,2 +1,2 @@
-# Snyk-EZ Import
+# Snyk-EZ
 snyk-api-import the easy way
