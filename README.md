@@ -32,7 +32,7 @@ snyk-api-import the easy way (Github version)
    - Scroll to the bottom of the *Edit settings* page, copy the Integration ID
    - Create Var --> `export SNYK_ORG_INT_ID=<your Snyk org integration ID>`
 
-     Write this Var to the snyk-orgs.json file, and delete the alternate option...
+     Write this Var to the snyk-orgs.json file, and delete the alternate integration option...
        - If you are doing regular GitHub integration: 
             ```
             cat <<< $(jq '.orgData[].integrations.github=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
