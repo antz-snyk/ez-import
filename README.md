@@ -30,7 +30,7 @@
    - Determine the correct integration option (GH or GH Enterprise), then select *Edit settings* for that integration option
    - Scroll to the bottom of the *Edit settings* page, copy the Integration ID
    - Create Var --> `export SNYK_ORG_INT_ID=<your Snyk org integration ID>`
-   - Write this Var to the snyk-orgs.jason file, and delete the alternate integration option; do one or the other of the below for this:
+   - Write this Var to the snyk-orgs.json file, and delete the alternate integration option; do one or the other of the below for this:
 
        - ...If you are doing regular GitHub integration: 
             ```
@@ -42,4 +42,17 @@
             cat <<< $(jq 'del(.orgData[].integrations ["github"])' snyk-orgs.json) > snyk-orgs.json
             cat <<< $(jq '.orgData[].integrations.github-enterprise=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
             ```
-7. 
+7. Get your [Snyk account token](https://app.snyk.io/account)
+   - In your account settings, under Api Token, click to show the key, select and copy the value
+   - Create Var --> `export SNYK_TOKEN=<Snyk Token>`
+8. Create a few more Vars:
+   
+   ```   
+   export SNYK_LOG_PATH=snyk-log
+   export SNYK_IMPORT_PATH=import-projects.json
+   export SNYK_API=https://snyk.io/api/v1
+   export SANITIZE_IMPORT_TARGET=true
+   ```
+---
+
+## Import data
