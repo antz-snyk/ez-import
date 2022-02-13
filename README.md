@@ -6,7 +6,7 @@ snyk-api-import the easy way (Github version)
 ---
 ## Set up
 
-*prereqs: jq, maybe npm*
+*prereqs: jq, npm*
 
 1. Install [snyk-api-import](https://github.com/snyk-tech-services/snyk-api-import) tool
    - Easiest way: `npm install snyk-api-import@latest -g`
@@ -32,7 +32,7 @@ snyk-api-import the easy way (Github version)
    - Scroll to the bottom of the *Edit settings* page, copy the Integration ID
    - Create Var --> `export SNYK_ORG_INT_ID=<your Snyk org integration ID>`
 
-     - Write this Var to the snyk-orgs.json file 
+     Write this Var to the snyk-orgs.json file, and delete the alternate option...
        - If you are doing regular GitHub integration: 
             ```
             cat <<< $(jq '.orgData[].integrations.github=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
