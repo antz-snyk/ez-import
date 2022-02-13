@@ -40,7 +40,7 @@ snyk-api-import the easy way (Github version)
             ```
        - If you are doing GitHub Enterprise integration:
             ```
-            cat <<< $(jq 'del(.orgData[].integrations.github)' snyk-orgs.json) > snyk-orgs.json
+            cat <<< $(jq 'del(.orgData[].integrations ["github"])' snyk-orgs.json) > snyk-orgs.json
             cat <<< $(jq '.orgData[].integrations.github-enterprise=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
             ```  
      
