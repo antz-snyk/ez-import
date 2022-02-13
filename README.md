@@ -5,7 +5,7 @@
 ---
 ## Set up
 
-*prereqs: jq, npm, a GitHub account connected to at least one GH organization with repos in it, a Snyk account with at least one Snyk org in it*
+****prereqs:*** **1)** jq **2)** npm **3)** a GitHub account connected to at least one GH organization with repos in it **4)** a Snyk account with at least one Snyk org in it*
 
 1. Install [snyk-api-import](https://github.com/snyk-tech-services/snyk-api-import) tool
    - Easiest way: `npm install snyk-api-import@latest -g`
