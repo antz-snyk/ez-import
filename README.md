@@ -96,8 +96,8 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 }
 ```
 
-3. Questions to ask: How many repos total? How many projects in each repo? Could the total # of projects exceed 2000? Should I break this file up? Should I create more Snyk orgs and change this file so some of these repos go to different Snyk orgs?
-4. Or, if ok with importing this number of repos/projects as is, lets go to the next step: importing the repos into Snyk!
+3. Questions to ask: How many repos total in this file? How many projects does that represent? Could the total # of projects exceed 2000? Should I break this file up? Should more Snyk orgs be created and some of these repos go to those?
+4. If ok with importing this number of repos/projects as is, lets go to the next step: importing the repos into Snyk!
 ---
 ## Import repos to Snyk
 
