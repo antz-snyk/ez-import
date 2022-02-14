@@ -80,7 +80,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
         "branch": "main"
       },
       "integrationId": "3813xxxx-16xx-486x-bxx6-b4exxxac158",
-      "orgId": "a62d91ba-6713-4c30-8097-ca184584d99c"
+      "orgId": "a62xx1ba-671x-xx30-8097-ca1845xxxxx"
     },
     {
       "target": {
@@ -90,7 +90,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
         "branch": "master"
       },
        "integrationId": "3813xxxx-16xx-486x-bxx6-b4exxxac158",
-       "orgId": "a62d91ba-6713-4c30-8097-ca184584d99c"
+       "orgId": "a62xx1ba-671x-xx30-8097-ca1845xxxxx"
     }
   ]
 }
