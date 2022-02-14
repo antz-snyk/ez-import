@@ -91,8 +91,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
       },
        "integrationId": "3813xxxx-16xx-486x-bxx6-b4exxxac158",
        "orgId": "a62d91ba-6713-4c30-8097-ca184584d99c"
-    }, 
-     {...}
+    }
   ]
 }
 ```
