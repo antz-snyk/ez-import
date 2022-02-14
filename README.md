@@ -1,6 +1,6 @@
 # Snyk-EZ
 
-*A kit to quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
+*A step-by-step guide to quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
 ## Set up
@@ -96,8 +96,8 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 }
 ```
 
-3. Questions to ask yourself: How many repos total? How many projects in each repo? Could the total # of projects exceed 2000? Should I break this file up? Should I create more Snyk orgs and add some of these repos to those?
-4. Adjust the github-import-targets.json as needed; split into two or multiple files, create new Snyk orgs, etc... Or, if ok with importing this number of repos/projects as is, lets go to the next step: importing the repos into Snyk!
+3. Questions to ask: How many repos total? How many projects in each repo? Could the total # of projects exceed 2000? Should I break this file up? Should I create more Snyk orgs and change this file so some of these repos go to different Snyk orgs?
+4. Or, if ok with importing this number of repos/projects as is, lets go to the next step: importing the repos into Snyk!
 ---
 ## Import repos to Snyk
 
