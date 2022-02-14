@@ -97,7 +97,13 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 ```
 
 3. Questions: How many repos total? How many projects in each repo? Could the total # of projects exceed 2000?
-
-
+4. Adjust the github-import-targets.json as needed; split into two or multiple files, create new Snyk orgs, etc... Or, if ok with importing this number of repos/projects as is, lets go to the next step: importing the repos into Snyk!
 ---
+## Import repos to Snyk
+
+Working directory: snyk-ez
+
+1. Assuming we're happy with the 'github-import-targets.json' as is, nothing left to do but import the repos...
+   - --> `snyk-api-import import --file=snyk-log/github-import-targets.json`
+
 
