@@ -96,7 +96,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 }
 ```
 
-3. Review this file: How many repos total? How many projects in each repo? Could the total # of projects exceed 2000?
+3. Questions: How many repos total? How many projects in each repo? Could the total # of projects exceed 2000?
 
 
 ---
