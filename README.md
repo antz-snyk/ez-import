@@ -7,7 +7,7 @@
 
 *1) [jq](https://stedolan.github.io/jq/download/) a lightweight and flexible command-line JSON processor*
 
-*2) [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) package manager for the Node JavaScript platform, I'm recommending this as a way to download the snyk-api-importer but there are other ways if npm is not an option* 
+*2) [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) package manager for the Node JavaScript platform, I'm recommending this as a way to download the snyk-api-importer but there are [other ways](https://github.com/snyk-tech-services/snyk-api-import#installation) if npm is not an option* 
 
 *3) a [GitHub account](https://github.com/login) connected to at least one GH organization with repos in it*
 
