@@ -9,9 +9,9 @@
 
 *2) [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) package manager for the Node JavaScript platform, I'm recommending this as a way to download the snyk-api-importer but there are [other ways](https://github.com/snyk-tech-services/snyk-api-import#installation) if npm is not an option* 
 
-*3) a [GitHub account](https://github.com/login) connected to at least one GH organization with repos in it*
+*3) a [GitHub account](https://github.com/login) connected to at least one GH organization with repos in it; log in form this link now if not already logged in*
 
-*4) a [Snyk account](https://app.snyk.io/login?cta=login&loc=nav&page=homepage) with at least one Snyk org in it*
+*4) a [Snyk account](https://app.snyk.io/login?cta=login&loc=nav&page=homepage) with at least one Snyk org in it; log in from this link now if not already logged in*
 
 ---
 ## Set up
