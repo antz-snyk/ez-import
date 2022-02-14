@@ -99,6 +99,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 
 3. Questions to ask: How many repos total in this file? How many projects does that represent? Could the total # of projects exceed 2000? Should I break this file up? Should more Snyk orgs be created and some of these repos go to those?
 4. If ok with importing this number of repos/projects as is, lets go to the next step
+5. More info on [snyk-orgs.json](https://github.com/snyk-tech-services/snyk-api-import/blob/master/docs/import-data.md#importdata)
 ---
 ## Import repos to Snyk
 
