@@ -57,3 +57,48 @@
 ---
 
 ## Import data
+
+Working directory: snyk-ez
+
+Now that were set up, the first thing we'll do is run a command to import data. This won't import any actual repos yet. Instead it will import data into a file. We'll use the data from that file to import the repos.
+
+It will: 1) query our GitHub org and read all the repos in it, 2) associate each one with our Snyk project, 3) create a new file that combines both 1) and 2) called 'github-import-targets.json' and save it to snyk-log directory, we'll use this to import the repos to Snyk
+
+1. Ok let's build our data file
+
+   - --> `snyk-api-import import:data --source=github --integrationType=github --orgsData=snyk-orgs.json`
+2. Review this file: --> `jq . snyk-log/github-import-targets.json`
+   - Should look something like this:
+```json
+{
+  "targets": [
+    {
+      "target": {
+        "fork": true,
+        "name": "java-goof",
+        "owner": "antz-snyk1",
+        "branch": "main"
+      },
+      "integrationId": "3813xxxx-16xx-486x-bxx6-b4exxxac158",
+      "orgId": "a62d91ba-6713-4c30-8097-ca184584d99c"
+    },
+    {
+      "target": {
+        "fork": true,
+        "name": "juice-shop",
+        "owner": "antz-snyk1",
+        "branch": "master"
+      },
+       "integrationId": "3813xxxx-16xx-486x-bxx6-b4exxxac158",
+       "orgId": "a62d91ba-6713-4c30-8097-ca184584d99c"
+    }, 
+     {...}
+  ]
+}
+```
+
+3. Review this file: How many repos total? How many projects in each repo? Could the total # opf projects exceed 2000?
+
+
+---
+
