@@ -3,12 +3,21 @@
 *A step-by-step guide, using variables and jq, to quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
+***prereqs:*** 
+
+*1) [jq](https://stedolan.github.io/jq/download/) a lightweight and flexible command-line JSON processor*
+
+*2) [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) package manager for the Node JavaScript platform, I'm recommending this as a way to download the snyk-api-importer but there are other ways if npm is not an option* 
+
+*3) a [GitHub account](https://github.com/login) connected to at least one GH organization with repos in it*
+
+*4) a [Snyk account](https://app.snyk.io/login?cta=login&loc=nav&page=homepage) with at least one Snyk org in it*
+
+---
 ## Set up
 
-****prereqs:*** **1)** jq **2)** npm **3)** a GitHub account connected to at least one GH organization with repos in it **4)** a Snyk account with at least one Snyk org in it*
-
-1. Install [snyk-api-import](https://github.com/snyk-tech-services/snyk-api-import) tool
-   - Easiest way: `npm install snyk-api-import@latest -g`
+1. Install [snyk-api-import](https://github.com/snyk-tech-services/snyk-api-import#installation) tool
+   - Easiest way if you have npm: `npm install snyk-api-import@latest -g`
 2. Clone this repo: `git clone https://github.com/antz-snyk/snyk-ez.git`
    - Navigate into it: `cd snyk-ez`
 3. Get your [GitHub Org name](https://github.com/settings/organizations), put that org name in snyk-orgs.json file
