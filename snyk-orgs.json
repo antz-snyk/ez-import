@@ -1,0 +1,12 @@
+{
+  "orgData": [
+    {
+      "name": "<org_name_in_gh_used_to_list_repos>",
+      "orgId": "<snyk_org_id>",
+      "integrations": {
+        "github": "<snyk_org_integration_id>",
+        "github-enterprise": "<snyk_org_integration_id>"
+      }
+    }
+  ]
+}

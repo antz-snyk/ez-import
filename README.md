@@ -45,14 +45,15 @@
 7. Get your [Snyk account token](https://app.snyk.io/account)
    - In your account settings, under Api Token, click to show the key, select and copy the value
    - Create Var --> `export SNYK_TOKEN=<Snyk Token>`
-8. Create a few more Vars:
-   
-   ```   
-   export SNYK_LOG_PATH=snyk-log
-   export SNYK_IMPORT_PATH=import-projects.json
-   export SNYK_API=https://snyk.io/api/v1
-   export SANITIZE_IMPORT_TARGET=true
-   ```
+8. Create a few more Vars/Commands:
+   - To keep track of imported repos, errors, activity --> `mkdir snyk-log && export SNYK_LOG_PATH=snyk-log`
+
+   - Specs about how to import repos --> `export SNYK_IMPORT_PATH=import-projects.json`
+
+   - So the utility can talk to the api --> `export SNYK_API=https://snyk.io/api/v1`
+
+   - A temporary patch --> `export SANITIZE_IMPORT_TARGET=true`
+
 ---
 
 ## Import data
