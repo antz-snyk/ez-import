@@ -64,9 +64,10 @@ Now that were set up, the first thing we'll do is run a command to import data. 
 
 It will: 1) query our GitHub org and read all the repos in it, 2) associate each one with our Snyk project, 3) create a new file that combines both 1) and 2) called 'github-import-targets.json' and save it to snyk-log directory, we'll use this to import the repos to Snyk
 
-1. Ok let's build our data file
+1. Ok let's build our data file; choose from one of the two below options
 
-   - --> `snyk-api-import import:data --source=github --integrationType=github --orgsData=snyk-orgs.json`
+   - If importing from regular GitHub org--> `snyk-api-import import:data --source=github --integrationType=github --orgsData=snyk-orgs.json`
+   - If importing from GitHub Enterprise org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json --sourceUrl=https://ghe.custom.com`
 2. Review this file: --> `jq . snyk-log/github-import-targets.json`
    - Should look something like this:
 ```json
