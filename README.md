@@ -94,7 +94,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
    - If importing from GitHub Enterprise org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json --sourceUrl=https://ghe.custom.com`
 
 
-2. Review this file: --> `jq . snyk-log/github-import-targets.json`
+2. Review this file --> `jq . snyk-log/github-import-targets.json`
    - Should look something like this:
 ```json
 {
@@ -123,7 +123,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 }
 ```
 
-3. Questions to ask: How many repos total in this file? How many projects does that represent? Could the total # of projects [exceed the limit](https://docs.snyk.io/getting-started/introduction-to-snyk-projects/maximum-number-of-projects-in-an-organsation)?
+3. Questions to ask: How many repos total in this file `cat snyk-log/github-import-targets.json | jq '.targets | length'`? How many projects does that represent? Could the total # of projects [exceed the limit](https://docs.snyk.io/getting-started/introduction-to-snyk-projects/maximum-number-of-projects-in-an-organsation)?
 
 
 4. If ok with importing this number of repos/projects as is, lets go to the next step
