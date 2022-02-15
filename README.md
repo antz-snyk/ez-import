@@ -59,8 +59,6 @@
 8. Create a few more Vars/Commands:
    - To keep track of imported repos, errors, activity --> `mkdir snyk-log && export SNYK_LOG_PATH=snyk-log`
 
-   - Specs about how to import repos --> `export SNYK_IMPORT_PATH=import-projects.json`
-
    - So the utility can talk to the api --> `export SNYK_API=https://snyk.io/api/v1`
 
    - A temporary patch --> `export SANITIZE_IMPORT_TARGET=true`
@@ -135,5 +133,5 @@ After the import finishes, you can get information about the import job with you
    - --> `jq . snyk-log/$SNYK_ORG_ID.failed-projects.log`
    
 
-3. Review the snyk-logs folder for other log files:
+4. Review the snyk-logs folder for other log files:
    - --> `ls -la snyk-log`
