@@ -55,12 +55,15 @@
             ```
 7. Get your [Snyk account token](https://app.snyk.io/account)
    - In your account settings, under Api Token, click to show the key, select and copy the value
+   
    - Create Var --> `export SNYK_TOKEN=<Snyk Token>`
+
+
 8. Create a few more Vars/Commands:
    - To keep track of imported repos, errors, activity --> `mkdir snyk-log && export SNYK_LOG_PATH=snyk-log`
-
+   
    - So the utility can talk to the api --> `export SNYK_API=https://snyk.io/api/v1`
-
+   
    - A temporary patch --> `export SANITIZE_IMPORT_TARGET=true`
 
 ---
@@ -71,12 +74,14 @@ Working directory: snyk-ez
 
 Now that were set up, the first thing we'll do is run a command to import data. This won't import any actual repos yet. Instead it will import data into a file. We'll use the data from that file to import the repos.
 
-It will: 1) query our GitHub org and read all the repos in it, 2) associate each one with our Snyk project, 3) create a new file that combines both 1) and 2) called 'github-import-targets.json' and save it to snyk-log directory, we'll use this to import the repos to Snyk
+It will: 1) query our GitHub org and read all the repos in it, 2) associate each one with our Snyk project, 3) create a new file that combines both 1 and 2 called 'github-import-targets.json' and save it to snyk-log directory, we'll use this to import the repos to Snyk
 
 1. Ok let's build our data file; choose from one of the two below options
 
    - If importing from regular GitHub org--> `snyk-api-import import:data --source=github --integrationType=github --orgsData=snyk-orgs.json`
    - If importing from GitHub Enterprise org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json --sourceUrl=https://ghe.custom.com`
+
+
 2. Review this file: --> `jq . snyk-log/github-import-targets.json`
    - Should look something like this:
 ```json
@@ -107,7 +112,11 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 ```
 
 3. Questions to ask: How many repos total in this file? How many projects does that represent? Could the total # of projects [exceed the limit](https://docs.snyk.io/getting-started/introduction-to-snyk-projects/maximum-number-of-projects-in-an-organsation)?
+
+
 4. If ok with importing this number of repos/projects as is, lets go to the next step
+
+
 5. More info on [snyk-orgs.json](https://github.com/snyk-tech-services/snyk-api-import/blob/master/docs/import-data.md#importdata)
 ---
 ## Import repos to Snyk
