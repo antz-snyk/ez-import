@@ -1,6 +1,6 @@
 # Snyk-EZ
 
-*A step-by-step guide, using variables and jq, to quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
+*A step-by-step guide, using **jq** and **variables**, to quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
 ***prereqs:*** 
@@ -12,6 +12,8 @@
 *3) a [GitHub account](https://github.com/login) connected to at least one GH organization with repos in it; log in from this link now if not already logged in*
 
 *4) a [Snyk account](https://app.snyk.io/login?cta=login&loc=nav&page=homepage) with at least one Snyk org in it; log in from this link now if not already logged in*
+
+*5) A working integration from the Snyk org to the GitHub user account*  
 
 ---
 ## Set up
@@ -114,7 +116,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 
 Working directory: snyk-ez
 
-1. Assuming we're happy with the 'github-import-targets.json' as is, nothing left to do but import the repos...
+1. Use the file you just created to import repos to Snyk:
    - --> `snyk-api-import import --file=snyk-log/github-import-targets.json`
 
 ---
@@ -127,8 +129,11 @@ After the import finishes, you can get information about the import job with you
 
 1. Check how many projects successfully imported:
    - --> `jq -s length snyk-log/$SNYK_ORG_ID.imported-projects.log`
+   
+   
 2. Check if any projects failed to import and why:
    - --> `jq . snyk-log/$SNYK_ORG_ID.failed-projects.log`
+   
 
 3. Review the snyk-logs folder for other log files:
    - --> `ls -la snyk-log`
