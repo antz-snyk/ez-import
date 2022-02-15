@@ -20,11 +20,11 @@
 
 1. Install [snyk-api-import](https://github.com/snyk-tech-services/snyk-api-import#installation) tool
    
-   - Easiest way if you have npm: `npm install snyk-api-import@latest -g`
+   - Easiest way if you have npm --> `npm install snyk-api-import@latest -g`
 
 
-2. Clone this repo: `git clone https://github.com/antz-snyk/snyk-ez.git`
-   - Navigate into it: `cd snyk-ez`
+2. Clone this repo --> `git clone https://github.com/antz-snyk/snyk-ez.git`
+   - Navigate into it --> `cd snyk-ez`
 
 
 3. Get your [GitHub Org name](https://github.com/settings/organizations), put that org name in snyk-orgs.json file
