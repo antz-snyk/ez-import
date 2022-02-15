@@ -106,7 +106,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 }
 ```
 
-3. Questions to ask: How many repos total in this file? How many projects does that represent? Could the total # of projects exceed 2000? Should some of these repos go to different Snyk orgs?
+3. Questions to ask: How many repos total in this file? How many projects does that represent? Could the total # of projects [exceed the limit](https://docs.snyk.io/getting-started/introduction-to-snyk-projects/maximum-number-of-projects-in-an-organsation)?
 4. If ok with importing this number of repos/projects as is, lets go to the next step
 5. More info on [snyk-orgs.json](https://github.com/snyk-tech-services/snyk-api-import/blob/master/docs/import-data.md#importdata)
 ---
@@ -117,4 +117,16 @@ Working directory: snyk-ez
 1. Assuming we're happy with the 'github-import-targets.json' as is, nothing left to do but import the repos...
    - --> `snyk-api-import import --file=snyk-log/github-import-targets.json`
 
+---
 
+## Snyk Log
+
+After the import finishes, you can get information about the import job with your **Snyk Org Id**, **jq**, and the newly generated files in your **snyk-log** directory
+
+1. Check how many projects successfully imported:
+   - --> `jq -s length snyk-log/$SNYK_ORG_ID.imported-projects.log`
+2. Check if any projects failed to import and why:
+   - --> `jq . snyk-log/$SNYK_ORG_ID.failed-projects.log`
+
+3. Review the snyk-logs folder for other log files:
+   - --> `ls -la snyk-log`
