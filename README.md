@@ -121,6 +121,8 @@ Working directory: snyk-ez
 
 ## Snyk Log
 
+Working directory: snyk-ez
+
 After the import finishes, you can get information about the import job with your **Snyk Org Id**, **jq**, and the newly generated files in your **snyk-log** directory
 
 1. Check how many projects successfully imported:
