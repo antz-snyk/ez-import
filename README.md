@@ -1,6 +1,6 @@
 # Snyk-EZ
 
-*A prescriptive example/exercise, using **jq** and **variables**, of how one might quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
+*A prescriptive example/exercise, using **jq** and **variables**, of how one can quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
 ***prereqs:*** 
