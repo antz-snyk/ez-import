@@ -1,6 +1,6 @@
 # Snyk-EZ
 
-*A prescriptive example/exercise, using **jq** and **variables**, of how one can quickly set up snyk-api-import utility and begin importing repos from Github to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
+*A prescriptive example/exercise, using **jq** and **variables**, of how one can quickly set up snyk-api-import utility and begin importing repos from GitHub to Snyk; see the [full repo](https://github.com/snyk-tech-services/snyk-api-import) for more info*
 
 ---
 ***prereqs:*** 
@@ -84,7 +84,7 @@
 
 ## Import data
 
-Working directory: snyk-ez
+Working directory: `/snyk-ez`
 
 Now that were set up, the first thing we'll do is run a command to import data. This won't import any actual repos yet. Instead it will import data into a file. We'll use the data from that file to import the repos.
 
@@ -136,7 +136,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 ---
 ## Import repos to Snyk
 
-Working directory: snyk-ez
+Working directory: `/snyk-ez`
 
 1. Use the file you just created to import repos to Snyk:
    - --> `snyk-api-import import --file=snyk-log/github-import-targets.json`
@@ -145,7 +145,7 @@ Working directory: snyk-ez
 
 ## Snyk Log
 
-Working directory: snyk-ez
+Working directory: `/snyk-ez`
 
 After the import finishes, you can get information about the import job with your **Snyk Org Id**, **jq**, and the newly generated files in your **snyk-log** directory
 
