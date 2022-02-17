@@ -64,7 +64,7 @@
             cat <<< $(jq 'del(.orgData[].integrations ["github"])' snyk-orgs.json) > snyk-orgs.json
             cat <<< $(jq '.orgData[].integrations.github-enterprise=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
             ```
-       - If doing GitLab Enterprise Server (on-prem), set up one more var: export GHE_SERVER_URL=<https://ghe.custom.com>
+       - If doing GitHub Enterprise Server (on-prem), set up one more var: export GHE_SERVER_URL=<https://ghe.custom.com>
      
        
 8. Get your [Snyk account token](https://app.snyk.io/account)
