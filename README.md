@@ -64,6 +64,8 @@
             cat <<< $(jq 'del(.orgData[].integrations ["github"])' snyk-orgs.json) > snyk-orgs.json
             cat <<< $(jq '.orgData[].integrations.github-enterprise=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
             ```
+       - If doing GitLab Enterprise Server (on-prem), set up one more var: export GHE_SERVER_URL=<https://ghe.custom.com>
+     
        
 8. Get your [Snyk account token](https://app.snyk.io/account)
    - In your account settings, under Api Token, click to show the key, select and copy the value
@@ -88,10 +90,11 @@ Now that were set up, the first thing we'll do is run a command to import data. 
 
 It will: 1) query our GitHub org and read all the repos in it, 2) associate each one with our Snyk project, 3) create a new file that combines both 1 and 2 called 'github-import-targets.json' and save it to snyk-log directory, we'll use this to import the repos to Snyk
 
-1. Ok let's build our data file; choose from one of the two below options
+1. Ok let's build our data file; choose from one of the three below options
 
    - If importing from regular GitHub org--> `snyk-api-import import:data --source=github --integrationType=github --orgsData=snyk-orgs.json`
-   - If importing from GitHub Enterprise org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json --sourceUrl=https://ghe.custom.com`
+   - If importing from GitHub Enterprise Cloud org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json`
+   - If importing from GitHub Enterprise Server org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json --sourceUrl=GHE_SERVER_URL`
 
 
 2. Review this file --> `jq . snyk-log/github-import-targets.json`
