@@ -35,7 +35,7 @@
 
 4. Make a new [GitHub Auth token](https://github.com/settings/tokens)
    - Again, ensure token is created with a GitHub user connected to a GitHub org
-   - Ensure token is created with all of the repo permissions
+   - Ensure token is created with all of the [required repo permissions](https://docs.snyk.io/integrations/git-repository-scm-integrations/github-enterprise-integration#required-permissions-scope-for-the-github-integration)
    - Create Var --> `export GITHUB_TOKEN=<your GitHub token>`
 
 
