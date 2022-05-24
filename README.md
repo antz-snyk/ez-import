@@ -39,36 +39,64 @@
    - Create Var --> `export GITHUB_TOKEN=<your GitHub token>`
 
 
-6. Get your [Snyk Org name](https://app.snyk.io/org/importer-org/manage/settings), put that org name in your snyk-orgs.json file
+6. Get your Snyk Org ID**, put that org ID in your snyk-orgs.json file
    - Once logged in to Snyk UI, navigate to the desired organization, then to settings (gear icon, upper right)
    - Scroll to Organization ID, copy the ID
    - Create Var --> `export SNYK_ORG_ID=<your Snyk org ID>`
    - Write this Var to the snyk-orgs.json file --> `cat <<< $(jq '.orgData[].orgId=env.SNYK_ORG_ID' snyk-orgs.json) > snyk-orgs.json`
  
   
-7. Get your [Snyk Integration ID for GitHub](https://app.snyk.io/org/importer-org/manage/integrations/), put that ID in your snyk-orgs.json file
-   - Navigate to [Integration settings page](https://app.snyk.io/org/importer-org/manage/integrations) within your Snyk org
+7. Get your **Snyk Integration ID** for GitHub, put that ID in your snyk-orgs.json file
+   - Navigate to Integration settings page within your Snyk org (gear icon, upper right, then click 'integrations' link on left-side menu)
    - Scroll to the GitHub and GitHub Enterprise settings; which was used to integrate?
    - Determine the correct integration option (GH or GH Enterprise), then select *Edit settings* for that integration option
    - Scroll to the bottom of the *Edit settings* page, copy the Integration ID
    - Create Var --> `export SNYK_ORG_INT_ID=<your Snyk org integration ID>`
    - Write this Var to the snyk-orgs.json file, and delete the alternate integration option; do one or the other of the below for this:
 
-       - ...If you are doing regular GitHub integration: 
+       - ...If you are doing **regular GitHub integration**: 
+            
+            run this command...
             ```
             cat <<< $(jq '.orgData[].integrations.github=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
+            ```
+            ...then this one...
+            ```
             cat <<< $(jq 'del(.orgData[].integrations ["github-enterprise"])' snyk-orgs.json) > snyk-orgs.json 
             ```
-       - ...If you are doing GitHub Enterprise integration:
+       - ...If you are doing **GitHub Enterprise integration**:
+            
+            run this command...
             ```
             cat <<< $(jq 'del(.orgData[].integrations ["github"])' snyk-orgs.json) > snyk-orgs.json
-            cat <<< $(jq '.orgData[].integrations.github-enterprise=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
+            ```
+            ...then this one...
+            ```
+            cat <<< $(jq '.orgData[].integrations."github-enterprise"=env.SNYK_ORG_INT_ID' snyk-orgs.json) > snyk-orgs.json
             ```
        - If doing GitHub Enterprise Server (on-prem), set up one more var: export GHE_SERVER_URL=<https://ghe.custom.com>
      
+   - Review the edited file: `cat snyk-orgs.json`
+      Should look something like this when done (example using GitHub Enterprise):
+
+
+      ```json
+      {
+       "orgData": [
+         {
+            "name": "your-GH-org-name",
+            "orgId": "6zZz98e6-bd18-4e14-8fZz-ZzZ0fc7209c9",
+            "integrations": {
+            "github-enterprise": "62f2dc18-ec29-4zZf-ad95-c68ba26zzzZc"
+            }
+         }
+      ]
+      }
+  
+      ```  
        
 8. Get your [Snyk account token](https://app.snyk.io/account)
-   - In your account settings, under Api Token, click to show the key, select and copy the value
+   - In your account settings, under Api Token, click to show the key, select and copy the value... Or create a [Snyk Svc Account token](https://docs.snyk.io/features/user-and-group-management/managing-groups-and-organizations/service-accounts)
    
    - Create Var --> `export SNYK_TOKEN=<Snyk Token>`
 
