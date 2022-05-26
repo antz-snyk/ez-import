@@ -121,7 +121,7 @@ It will: 1) query our GitHub org and read all the repos in it, 2) associate each
 1. Ok let's build our data file; choose from one of the three below options
 
    - If importing from regular GitHub org--> `snyk-api-import import:data --source=github --integrationType=github --orgsData=snyk-orgs.json`
-   - If importing from GitHub Enterprise Cloud org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json`
+   - If importing from GitHub Enterprise Cloud org--> `snyk-api-import import:data --source=github --integrationType=github-enterprise --orgsData=snyk-orgs.json`
    - If importing from GitHub Enterprise Server org--> `snyk-api-import import:data --source=github-enterprise --integrationType=github-enterprise --orgsData=snyk-orgs.json --sourceUrl=GHE_SERVER_URL`
 
 
